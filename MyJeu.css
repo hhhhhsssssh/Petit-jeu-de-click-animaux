@@ -1,0 +1,80 @@
+@import url(https://fonts.bunny.net/css?family=aldrich:400);
+* {
+  margin: 0;
+  font-family: aldrich;
+  font-size: 25px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameInfos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  height: 550px;
+  width: 700px;
+  border: 1px solid #9999;
+  cursor: crosshair;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("back.jpg");
+  background-position: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#target {
+  border-radius: 30px;
+  width: 60px;
+  position: absolute;
+  transition: 0.25 s;
+  animattion: animateTarget 10s infinite;
+  object-fit: contain;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #ffff;
+}
+
+@keyframe animateTarget {
+  to {
+    transform: translate(-200px) rotate(90deg);
+  }
+}
+
+@keyframes moveNegativeOne {
+  0% {
+    top: 100%;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.negative-one {
+  position: absolute;
+  font-size: 20px;
+  color: red;
+  animation: moveNegativeOne 2s linear;
+}
